@@ -15,8 +15,6 @@ public class Ristorante {
 
 	public void dashboard() throws InterruptedException, IOException {
 		
-		System.out.println("Avvio del programma...");
-
 		while(true) {
 		
 			System.out.println("Salve, quali operazioni desideri fare ?\n");
@@ -58,7 +56,7 @@ public class Ristorante {
 			
 			case "6": 
 				
-				System.out.println("L'incasso totale di oggi è " + cassa.getCassa() + " euro");
+				System.out.println("L'incasso totale di oggi è " + (Math.round(cassa.getCassa() * 100.0) / 100.0) + " euro");
 				System.out.println("Programma in chiusura...");
 				Thread.sleep(2000);
 				System.exit(0);

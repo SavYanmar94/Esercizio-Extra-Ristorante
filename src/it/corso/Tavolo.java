@@ -28,6 +28,7 @@ public class Tavolo {
 		
 		}
 	  }
+	  mostraTavoli();
 	}
 	
 	public int[][] tavoli = new int[numRighe][numColonne];
@@ -42,6 +43,7 @@ public class Tavolo {
 		this.cassa = cassa;
 		try {
 			NumerototTavoli();
+			assegnaTavolo();
 		} catch (NumberFormatException | IOException e) {
 			e.printStackTrace();
 		} // Chiamiamo il metodo per ottenere i valori delle righe e colonne
