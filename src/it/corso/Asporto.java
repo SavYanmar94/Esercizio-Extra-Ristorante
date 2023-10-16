@@ -34,18 +34,19 @@ public void registraOrddaAsporto() throws IOException {
 		System.out.println("5.Primo di mare - 10.90 euro");
 		System.out.println("6.Primo di terra - 8.90 euro");
 	    
-	    System.out.println("Inserisci il nominativo cliente");
+	    System.out.println("\nInserisci il nominativo cliente");
 	    String nominativoCliente = reader.readLine();
 	    
-	    while(true) {
+	    
 	    	
-		    if(nominativoCliente.length()>2) {
+		if(nominativoCliente.length()>2) {
 		    	System.out.println("Nome inserito correttamente");
-		    	break;
+		    	
 		    } else {
 		    	System.out.println("Il nominativo deve essere almeno di 3 lettere");
+		    	registraOrddaAsporto();
 		    }
-	    }
+	   
 	    
 	    while (true) {
 				
@@ -61,7 +62,7 @@ public void registraOrddaAsporto() throws IOException {
 
 				String sceltaAsporto = reader.readLine();
 	        
-
+	
 				switch (sceltaAsporto) {
 	            	case "1":
 	            		
@@ -86,8 +87,8 @@ public void registraOrddaAsporto() throws IOException {
 	            		String antipasti = "- "+ quantita + " antipasti";
 	            		AsportoList.add(antipasti);
 	            		}
-	                	
 	            		break;
+	            		
 	            		
 	            	case "2":
 	            		
@@ -229,7 +230,7 @@ public void registraOrddaAsporto() throws IOException {
 		            	for(String singolaVoce: AsportoList) {
 		            		System.out.println(singolaVoce);
 		            	}
-		            	System.out.println("\nTotale conto tavolo num." + nominativoCliente + " = " + Math.round(contoTemporaneoOrdinazione * 100.0) / 100.0 + " euro" + "\n");
+		            	System.out.println("\nTotale conto asporto " + nominativoCliente + " = " + Math.round(contoTemporaneoOrdinazione * 100.0) / 100.0 + " euro" + "\n");
 		            	
 		            	
 		            	return;
@@ -237,7 +238,6 @@ public void registraOrddaAsporto() throws IOException {
 		            	
 		            default:
 		                System.out.println("Input errato");
-		                registraOrddaAsporto();
 		                break;
 	            
 	        
